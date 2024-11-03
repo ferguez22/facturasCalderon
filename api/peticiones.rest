@@ -1,0 +1,83 @@
+@host = http://localhost:3000
+
+### CLIENTES
+
+### Obtener todos los clientes
+GET {{host}}/api/clientes
+
+### Crear nuevo cliente
+POST {{host}}/api/clientes
+Content-Type: application/json
+
+{
+    "nombre": "Cliente Nuevo",
+    "NIF": "X9876543Z",
+    "direccion": "Calle Nueva 123",
+    "ciudad": "Madrid",
+    "telefono": "666777888",
+    "email": "nuevo@example.com"
+}
+
+### Obtener un cliente por su id
+GET {{host}}/api/clientes/1
+
+### Actualizar un cliente por su id 
+PUT {{host}}/api/clientes/1
+Content-Type: application/json
+
+{
+    "nombre": "Juan Perez",
+    "direccion": "Calle Falsa 123",
+    "telefono": "1234567890"
+}
+
+### Eliminar un cliente por su id
+DELETE {{host}}/api/clientes/1
+
+
+
+
+//////////////////////////////////////////////////////////////
+    ### Facturas
+
+### Obtener todas las facturas
+GET {{host}}/api/facturas
+
+### Obtener facturas por cliente
+GET {{host}}/api/facturas/cliente/2
+
+### Obtener estadísticas de facturas
+GET {{host}}/api/facturas/stats
+
+### Crear una nueva factura
+POST {{host}}/api/facturas
+Content-Type: application/json
+
+{
+    "cliente_id": 2,
+    "numero_factura": "F2024-003", 
+    "descripcion": "Factura de prueba 3",
+    "items": [
+        {
+            "descripcion": "Pieza Grande",
+            "largo_mm": 2000,
+            "ancho_mm": 1000,
+            "unidades": 1
+        },
+        {
+            "descripcion": "Pieza Pequeña",
+            "largo_mm": 500,
+            "ancho_mm": 300,
+            "unidades": 5
+        }
+    ]
+}
+
+### Obtener una factura por su id
+GET {{host}}/api/facturas/1
+
+### Eliminar una factura por su id
+DELETE {{host}}/api/facturas/2
+
+### Descargar PDF de una factura por su id
+GET {{host}}/api/facturas/2/pdf

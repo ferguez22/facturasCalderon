@@ -1,0 +1,33 @@
+{
+  "name": "tapiceria-facturas",
+  "version": "1.0.0",
+  "description": "Sistema de gestión de facturas para Tapicería Calderón, una empresa especializada en tapizado y restauración de muebles.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "generate": "express generate",
+    "config": "express config"
+  },
+  "keywords": [
+    "tapiceria",
+    "facturas",
+    "muebles",
+    "gestion"
+  ],
+  "author": "Fernando Rodriguez",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "fs-extra": "^11.2.0",
+    "mysql2": "^3.11.3",
+    "puppeteer": "^23.6.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "cli-express": "^1.2.0",
+    "nodemon": "^3.0.1"
+  }
+}
